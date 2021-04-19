@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tests" parallel="false">
+  <listeners>
+    <listener class-name="com.company.MyTestListener"></listener>
+    <listener class-name="com.company.MyReporter"></listener>
+  </listeners>
+
+  <test name="Tests">
+    <packages>
+      <package name="com.company.*"/>
+    </packages>
+  </test>
+</suite>
