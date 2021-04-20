@@ -22,6 +22,7 @@ ext {
     projectLombokVersion = '1.18.4'
     testNgVersion = '7.4.0'
     mockitoVersion = '2.28.2'
+    opencsvVersion = '4.1'
 }
 
 dependencies {
@@ -29,9 +30,11 @@ dependencies {
     compile "org.slf4j:slf4j-api:$slf4jVersion"
     runtime "org.slf4j:slf4j-simple:$slf4jVersion"
     compile "org.projectlombok:lombok:$projectLombokVersion"
+    compile "com.google.guava:guava:29.0-jre"
 
     testCompile "org.testng:testng:$testNgVersion"
     testCompile "org.mockito:mockito-core:$mockitoVersion"
+    testCompile "com.opencsv:opencsv:$opencsvVersion"
 }
 
 test {

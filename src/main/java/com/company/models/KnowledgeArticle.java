@@ -6,9 +6,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Item {
+public class KnowledgeArticle {
   protected Long id;
-  protected String name;
-  protected String description;
-  protected int price;
+  protected String title;
+  protected String body;
 }
