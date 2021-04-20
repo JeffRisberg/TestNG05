@@ -20,7 +20,7 @@ public class KnowledgeArticleMatcherTest {
   private static KnowledgeArticleMatcher kamService;
 
   @BeforeSuite
-  public void setUp() throws Exception {
+  public void setUp() {
     kaStore = new KnowledgeArticleStore();
 
     KnowledgeArticle ka;
@@ -44,19 +44,6 @@ public class KnowledgeArticleMatcherTest {
   }
 
   @Test
-  public void getKnowledgeArticleById() {
-    //
-    // When
-    //
-    KnowledgeArticle result = kaStore.findById(1L);
-
-    //
-    // Verify
-    //
-    assertEquals(result.getTitle(), "VPN network trouble");
-  }
-
-  @Test
   public void getKnowledgeArticleByRequest() {
     //
     // When
@@ -76,18 +63,5 @@ public class KnowledgeArticleMatcherTest {
     KnowledgeArticle result = kamService.getKnowledgeArticle(request);
     assertNotNull(result);
     assertEquals(result.getId(), id);
-  }
-
-  @Test
-  private void fileReaderTest() throws Exception {
-    List<List<String>> records = new ArrayList<List<String>>();
-
-    try (CSVReader csvReader = new CSVReader(new FileReader("src/test/resources/requests.csv")); ) {
-      String[] values = null;
-
-      while ((values = csvReader.readNext()) != null) {
-        records.add(Arrays.asList(values));
-      }
-    }
   }
 }
