@@ -30,7 +30,7 @@ public class KnowledgeArticleStoreTest {
     kaStore.addKnowledgeArticle(ka);
   }
 
-  @Test
+  @Test(priority = 1)
   public void getKnowledgeArticleById() {
     //
     // When

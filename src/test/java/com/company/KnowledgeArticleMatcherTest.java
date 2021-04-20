@@ -43,7 +43,7 @@ public class KnowledgeArticleMatcherTest {
     kamService = new KnowledgeArticleMatcher(kaStore);
   }
 
-  @Test
+  @Test(priority = 2)
   public void getKnowledgeArticleByRequest() {
     //
     // When
@@ -56,7 +56,7 @@ public class KnowledgeArticleMatcherTest {
     assertEquals(result.getBody(), "Reset using okta master login");
   }
 
-  @Test(dataProvider = "requestProvider", dataProviderClass = RequestProvider.class)
+  @Test(priority = 3, dataProvider = "requestProvider", dataProviderClass = RequestProvider.class)
   public void getKnowledgeArticleTest(String request, Long id) {
     System.out.println("request: " + request + ", id: " + id);
 
